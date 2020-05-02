@@ -40,18 +40,18 @@
 	&::before {
 		color: $color_text;
 		content: '';
+		font-weight: 400;
 		left: 50%;
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		font-weight: 400;
 	}
 }
 
 .page__footer-item--twitter {
 	&::before {
-	content: '\f099';
-	font-family: 'Font Awesome 5 Brands';
+		content: '\f099';
+		font-family: 'Font Awesome 5 Brands';
 	}
 }
 
