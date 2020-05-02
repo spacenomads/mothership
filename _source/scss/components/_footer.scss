@@ -45,6 +45,12 @@
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
+		transition: color ease $time_transition;
+	}
+	&:hover {
+		&::before {
+			color: #00aaeb;
+		}
 	}
 }
 
