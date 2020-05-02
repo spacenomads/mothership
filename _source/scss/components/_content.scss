@@ -97,3 +97,27 @@
 		opacity: .45;
 	}
 }
+
+
+
+
+
+.completed {
+	.landing__brand {
+		&::before {
+			transform: translate(0, 0);
+			transition: none;
+		}
+
+		&::after {
+			opacity: 1;
+			transition: none;
+		}
+	}
+
+	.landing__status {
+		transform: translateY(0);
+		opacity: .45;
+		transition: none;
+	}
+}
