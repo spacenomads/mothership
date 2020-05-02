@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 {% block vars %}
-	{% set lang = "es" %}
-	{% set template = "tpl__home" %}
-	{% set page = "home" %}
-	{% set pageTitle = "Asteroids homepage" %}
+	{% set page = {
+		lang: "es",
+		id: "home",
+		title: "Welcome home, Asteroid",
+		template: "tpl__asteroid",
+		classes: ""
+	} %}
 {% endblock %}
-<html class="no-js" lang="{{lang}}">
+<html class="no-js" lang="{{page.lang}}">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>{{pageTitle}}</title>
+	<title>{{page.title}}</title>
 	{% block head %}
 		{% include "partials/_head.njk" %}
 	{% endblock %}
 </head>
-<body class="{{template}} {{page}}">
+<body class="{{page.template}} {{page.id}} {{page.classes}}">
 	<div class="page">
-		{% include "partials/_header.njk" %}
-		<main class="page__main">
-		{% block content %}
-			<h1>{{pageTitle}}</h1>
-		{% endblock %}
-		</main>
-		{% include "partials/_footer.njk" %}
+	{% block content %}
+		<h1>{{page.title}} ☄️</h1>
+	{% endblock %}
 	</div>
-	{% include "partials/_cookies.njk" %}
+
 	{% include "partials/_js.njk" %}
+	{% block js %}
+	{% endblock %}
 </body>
 </html>

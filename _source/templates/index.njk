@@ -1,10 +1,32 @@
-{% set lang = "en" %}
-{% set template = "tpl__home" %}
-{% set page = "home" %}
-{% set pageTitle = "Página de prueba" %}
+{% set page = {
+		lang: "es",
+		id: "landing",
+		title: "Spacenomads",
+		template: "tpl__landing",
+		classes: ""
+	} %}
 
 {% extends "layouts/main.njk" %}
 
 {% block content %}
-	<h1>{{pageTitle}}</h1>
+	<main class="page__main">
+		<div class="page__wrapper">
+			<h1 class="landing__brand">
+				<span class="landing__brand-label">Space Nomads</span>
+			</h1>
+			<h2 class="landing__status">Global pandemic edition</h2>
+		</div>
+	</main>
+
+	{% include "partials/_footer.njk" %}
+
+	<div class="space">
+		<div class="stars stars--small"></div>
+		<div class="stars stars--medium"></div>
+		<div class="stars stars--big"></div>
+	</div>
+{% endblock %}
+
+{% block js %}
+	<script src="https://kit.fontawesome.com/dfe6f8dc10.js" crossorigin="anonymous"></script>
 {% endblock %}

@@ -1,2 +1,15 @@
 // LAYOUT
-@include snitch();
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.page {
+	height: inherit;
+	overflow: hidden;
+}
+
+.page__wrapper {
+	padding: 0 rem(50);
+}

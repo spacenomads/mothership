@@ -1,0 +1,73 @@
+.space {
+	@include z(space);
+
+	background: linear-gradient(to bottom, $gradient_start 40%, $gradient_stop 100%);
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+
+$shadows-small: multiple-box-shadow(900);
+$shadows-medium: multiple-box-shadow(550);
+$shadows-big: multiple-box-shadow(100);
+
+.stars {
+	background: transparent;
+
+	&::after {
+		background: inherit;
+		content: ' ';
+		height: 100%;
+		position: absolute;
+		top: 2000px;
+		width: 100%;
+	}
+}
+
+.stars--small {
+	animation: animStar 50s linear infinite;
+	box-shadow: $shadows-small;
+	height: px(1);
+	width: px(1);
+
+	&::after {
+		box-shadow: $shadows-small;
+	}
+}
+
+.stars--medium {
+	animation: animStar 100s linear infinite;
+	box-shadow: $shadows-medium;
+	height: px(1.75);
+	width: px(1.75);
+
+	&::after {
+		box-shadow: $shadows-medium;
+	}
+}
+
+.stars--big {
+	animation: animStar 150s linear infinite;
+	box-shadow: $shadows-big;
+	height: px(2);
+	width: px(2);
+
+	&::after {
+		box-shadow: $shadows-big;
+	}
+}
+
+
+@keyframes animStar {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(-2000px);
+	}
+}

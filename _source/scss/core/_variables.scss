@@ -8,8 +8,20 @@ $color_black: #000;
 $color_blue: #07c;
 
 $color_title: $color_black;
-$color_text: $color_black;
+$color_text: $color_white;
 $color_link: $color_blue;
+
+
+
+
+
+// GRadient
+$gradient_start: #1c334a;
+$gradient_stop: #17283e;
+$gradient_start: #83ad9f;
+$gradient_stop: #234d60;
+$gradient_start: #212b4c;
+$gradient_stop: #441d28;
 
 
 
@@ -24,16 +36,14 @@ $dim_margin: 20;
 
 // Fonts
 $font_fallback: arial, sans-serif;
-$font_text: 'Verdana', $font_fallback;
+$font_text: 'Roboto', $font_fallback;
+$font_text-alt: 'Roboto Slab', $font_fallback;
 $font_size: 16;
 $font_line_height: 130%;
-$font_thin: 100;
+
 $font_light: 300;
 $font_regular: 400;
-$font_medium: 500;
-$font_semibold: 600;
 $font_bold: 700;
-$font_black: 900;
 
 
 
@@ -54,7 +64,7 @@ $theme: '../img/layout/';
 
 
 // Levels
-$levels: background, content, header, menu, cookies;
+$levels: space, content, footer;
 
 
 

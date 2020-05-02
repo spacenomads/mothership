@@ -1,1 +1,64 @@
-// FOOTER
+.page__footer {
+	@include z(footer);
+
+	bottom: 0;
+	position: fixed;
+	right: 0;
+
+	.page__wrapper {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column-reverse;
+		padding: rem(25);
+	}
+}
+
+
+.page__footer-links {
+	@extend %unlist;
+
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: rem(5);
+}
+
+.page__footer-link {
+	& + .page__footer-link {
+		margin-left: rem(10);
+	}
+}
+
+.page__footer-item {
+	@include icon(40);
+
+	border: 1px solid rgba($color_white, .2);
+	border-radius: px(4);
+	display: block;
+	position: relative;
+	width: rem(40);
+
+	&::before {
+		color: $color_text;
+		content: '';
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		font-weight: 400;
+	}
+}
+
+.page__footer-item--twitter {
+	&::before {
+	content: '\f099';
+	font-family: 'Font Awesome 5 Brands';
+	}
+}
+
+.page__footer-item--mail {
+	&::before {
+		content: '\f0e0';
+		font-family: 'Font Awesome 5 Pro';
+		font-weight: 900;
+	}
+}
