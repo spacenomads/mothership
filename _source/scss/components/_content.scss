@@ -61,18 +61,35 @@
 	.landing__brand {
 		&::before {
 			transform: translate(1500%, -1500%);
-			transition: transform ease $time_transition;
 		}
 
 		&::after {
 			opacity: 0;
-			transition: opacity ease $time_transition .5s;
 		}
 	}
 
 	.landing__status {
 		transform: translateY(1em);
 		opacity: 0;
+	}
+}
+
+
+
+
+
+.active {
+	.landing__brand {
+		&::before {
+			transition: transform ease $time_transition;
+		}
+
+		&::after {
+			transition: opacity ease $time_transition .5s;
+		}
+	}
+
+	.landing__status {
 		transition: opacity ease $time_transition 1s, transform ease $time_transition*2 .8s;
 	}
 }
@@ -95,29 +112,5 @@
 	.landing__status {
 		transform: translateY(0);
 		opacity: .45;
-	}
-}
-
-
-
-
-
-.completed {
-	.landing__brand {
-		&::before {
-			transform: translate(0, 0);
-			transition: none;
-		}
-
-		&::after {
-			opacity: 1;
-			transition: none;
-		}
-	}
-
-	.landing__status {
-		transform: translateY(0);
-		opacity: .45;
-		transition: none;
 	}
 }
