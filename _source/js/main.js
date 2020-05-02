@@ -10,7 +10,9 @@ function startAnimation(page, time) {
 			page.classList.add('has-asteroid');
 			setTimeout(function() {
 				page.classList.remove('ready');
-			}, time);
+				page.classList.add('completed');
+				console.log('YA');
+			}, time*1.5);
 		}, time);
 	}
 }
