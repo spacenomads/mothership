@@ -119,6 +119,7 @@ function templates() {
 		.pipe(htmltidy({
 			doctype: 'html5',
 			hideComments: true,
+			dropEmptyElements: false,
 			indent: true
 		}))
 		.pipe(dest(config.templates.dest));
