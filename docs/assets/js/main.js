@@ -12,7 +12,6 @@ function startAnimation(page, time) {
 			setTimeout(function() {
 				page.classList.remove('ready');
 				page.classList.remove('active');
-				console.log('YA');
 			}, time*1.5);
 		}, time);
 	}
