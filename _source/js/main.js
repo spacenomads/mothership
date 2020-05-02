@@ -8,6 +8,9 @@ function startAnimation(page, time) {
 	if ( page.classList.contains('ready') ) {
 		setTimeout(function() {
 			page.classList.add('has-asteroid');
+			setTimeout(function() {
+				page.classList.remove('ready');
+			}, time);
 		}, time);
 	}
 }
