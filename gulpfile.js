@@ -216,6 +216,16 @@ function scriptsMin() {
 
 
 // GITHUB PAGES
+// > Move mail images into production folder
+function mail() {
+	return src(config.mail.src)
+		.pipe(dest(config.mail.pro));
+}
+
+
+
+
+
 // > Create CNAME file into production folder
 function cname() {
 	return src(config.cname.src)
@@ -344,7 +354,7 @@ const deploy = series(clean, icons, images, humansTXT, vendorJS, templatesMin, s
 
 
 // > Generate public folder
-const production = series(cleanPro, iconsPro, imagesPro, humansTXTPro, vendorJSPro, templatesMinPro, stylesMinPro, scriptsMinPro, cname);
+const production = series(cleanPro, mail, iconsPro, imagesPro, humansTXTPro, vendorJSPro, templatesMinPro, stylesMinPro, scriptsMinPro, cname);
 
 
 
@@ -387,6 +397,7 @@ module.exports = {
 	clean,
 	cleanPro,
 	cname,
+	mail,
 	icons,
 	iconsPro,
 	images,
