@@ -37,34 +37,47 @@
 	position: relative;
 	width: rem(40);
 
-	&::before {
-		color: $color_text;
+	&::before,
+	&::after {
+		background: img('sprite-contact.svg') left top no-repeat;
 		content: '';
-		font-weight: 400;
+		height: rem(16);
 		left: 50%;
 		position: absolute;
 		top: 50%;
 		transform: translate(-50%, -50%);
 		transition: color ease $time_transition;
+		width: rem(16);
 	}
+
+	&::after {
+		opacity: 0;
+		transition: opacity ease .5s;
+	}
+
 	&:hover {
-		&::before {
-			color: #00aaeb;
+		&::after {
+			opacity: 1;
 		}
 	}
 }
 
 .page__footer-item--twitter {
 	&::before {
-		content: '\f099';
-		font-family: 'Font Awesome 5 Brands';
+		background-position: left top;
+	}
+
+	&::after {
+		background-position: left bottom;
 	}
 }
 
 .page__footer-item--mail {
 	&::before {
-		content: '\f0e0';
-		font-family: 'Font Awesome 5 Pro';
-		font-weight: 900;
+		background-position: right top;
+	}
+
+	&::after {
+		background-position: right bottom;
 	}
 }
