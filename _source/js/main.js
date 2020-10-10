@@ -22,7 +22,7 @@ function startAnimation(page, time) {
 
 
 function initPage(page) {
-	page.classList.add('ready');
+	//page.classList.add('ready');
 	startAnimation(page, 1000);
 }
 
