@@ -1,20 +1,21 @@
 const { src, dest, series, watch } = require('gulp');
+//const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
-const combineMq = require('gulp-combine-mq');
 const config = require('./config.json');
 const del = require('del');
+const htmlbeautify = require('gulp-html-beautify');
 const htmlmin = require('gulp-htmlmin');
-const htmltidy = require('gulp-htmltidy');
+const mqpacker = require('@hail2u/css-mqpacker');
 const notify = require('gulp-notify');
 const nunjucksRender = require('gulp-nunjucks-render');
 const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-//const uglify = require('gulp-uglify');
 const zip = require('gulp-zip');
-
+const plugins = [mqpacker({ sort: true })];
 
 
 
@@ -116,11 +117,9 @@ function templates() {
 		.pipe(nunjucksRender({
 			path: [config.templates.path]
 		}))
-		.pipe(htmltidy({
-			doctype: 'html5',
-			hideComments: true,
-			dropEmptyElements: false,
-			indent: true
+		.pipe(htmlbeautify({
+			'preserve_newlines': false,
+			'indent_with_tabs': true,
 		}))
 		.pipe(dest(config.templates.dest));
 }
@@ -137,9 +136,7 @@ function styles() {
 		.pipe(sass({
 			outputStyle: 'extended',
 		}))
-		.pipe(combineMq({
-			beautify: true
-		}))
+		.pipe(postcss(plugins))
 		.pipe(autoprefixer({
 			cascade: false
 		}))
@@ -189,9 +186,7 @@ function stylesMin() {
 		.pipe(sass({
 			outputStyle: 'compressed',
 		}))
-		.pipe(combineMq({
-			beautify: false
-		}))
+		.pipe(postcss(plugins))
 		.pipe(autoprefixer({
 			cascade: false
 		}))
@@ -314,9 +309,7 @@ function stylesMinPro() {
 		.pipe(sass({
 			outputStyle: 'compressed',
 		}))
-		.pipe(combineMq({
-			beautify: false
-		}))
+		.pipe(postcss(plugins))
 		.pipe(autoprefixer({
 			cascade: false
 		}))
