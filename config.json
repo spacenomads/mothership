@@ -18,6 +18,11 @@
 		"dest": "public",
 		"pro": "docs"
 	},
+	"fonts": {
+		"src": "_source/assets/fonts/**.*",
+		"dest": "public/assets/fonts",
+		"pro": "docs/assets/fonts"
+	},
 	"images": {
 		"src": "_source/assets/img/**/*.{gif,jpg,jpeg,png,svg}",
     "dest": "public/assets/img",
@@ -59,6 +64,9 @@
 	"watch": {
 		"images": [
 			"_source/assets/img/**/*.{gif,jpg,jpeg,png,svg}"
+		],
+		"fonts": [
+			"_source/assets/fonts/**/*.{ttf,woff,woff2,svg}"
 		],
 		"vendorJS": [
 			"_source/assets/js/vendor/*.js"

@@ -81,3 +81,38 @@
 		background-position: right bottom;
 	}
 }
+
+.page__footer-item--chuck {
+	background: img('../maquetando-con-chuck/chuck.png') center no-repeat;
+	background-size: cover;
+
+	&::before,
+	&::after {
+		display: none;
+	}
+}
+
+
+.page__footer-item--with-tooltip {
+	position: relative;
+	overflow: hidden;
+}
+
+.tooltip {
+	position: absolute;
+	left: 0;
+	bottom: 100%;
+	color: white;
+	padding: rem(5) 0;
+	font-weight: 900;
+	opacity: 0;
+	transition: opacity ease .3s;
+}
+
+.page__footer-item--with-tooltip:hover {
+	overflow: visible;
+
+	.tooltip {
+		opacity: 1;
+	}
+}

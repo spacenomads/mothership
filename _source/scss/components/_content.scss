@@ -1,17 +1,19 @@
-.page__main {
-	@include z(content);
+.landing {
+	.page__main {
+		@include z(content);
 
-	color: $color_text;
-	height: inherit;
-	position: relative;
+		color: $color_text;
+		height: inherit;
+		position: relative;
 
-	.page__wrapper {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		height: 100%;
-		min-height: rem(400);
-		justify-content: center;
+		.page__wrapper {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+			min-height: rem(400);
+			justify-content: center;
+		}
 	}
 }
 
