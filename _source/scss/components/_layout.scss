@@ -5,11 +5,13 @@ body {
 	margin: 0;
 }
 
-.page {
-	height: inherit;
-	overflow: hidden;
-}
+.landing {
+	.page {
+		height: inherit;
+		overflow: hidden;
+	}
 
-.page__wrapper {
-	padding: 0 rem(50);
+	.page__wrapper {
+		padding: 0 rem(50);
+	}
 }

@@ -1,0 +1,113 @@
+<article class="chuck__readme">
+	<div class="page__wrapper">
+		<div class="chuck__readme-block">
+			<h1 class="chuck__readme-title">{{page.title}}</h1>
+			<p>El origen de estos vídeos es porque cuando estaba de profe en un bootcamp eché mucho en falta poder haber hecho suficiente énfasis en la importancia de la semántica a la hora de maquetar.</p>
+			<p>Luego tb pasa que hay mucho contenido de front con javascript y no tanto de maquetación y semántica.</p>
+			<p>Por eso, unos domingos cada mes, voy a estar maquetando en directo un ratico.</p>
+			<p>:)</p>
+		</div>
+
+
+		<div class="chuck__readme-block">
+			<h2 class="chuck__readme-subtitle">Sesiones</h2>
+			<p>Durante unos días los vídeos seguirán en el <a href="https://twitch.tv/guanaiman">canal de Twitch</a> pero luego los dejaré subidos en <a href="https://www.youtube.com/channel/UCN45ASD_OiJgmH8CW_4T8wA">Youtube</a>, recogidos además en <a href="https://www.youtube.com/playlist?list=PLO-mtrYE0827SRqJnPOOU1OQLbN_OZpT6">esta playlist</a>.</p>
+
+			<p>Y todo el código estará en abierto en un <a href="https://github.com/oneeyedman/maquetando-con-chuck">repo de Github</a></p>
+
+			<h3 class="chuck__readme-subtitle">Vídeos anteriores</h3>
+			{% set videos = [
+				{
+					name: '00 - Tooltip',
+					videos: [
+						{
+							link: 'https://www.youtube.com/watch?v=pwtNFzrbNAM',
+							duration: '45 min',
+							time: 'PT45M'
+						},
+						{
+							link: 'https://www.youtube.com/watch?v=SqGFoHnJg60',
+							duration: 'Casi 1h',
+							time: 'PT1H'
+						}
+					]
+				},
+				{
+					name: '01 - HTML (y semántica)',
+					videos: [
+						{
+							link: 'https://www.youtube.com/watch?v=5vATBkG4Ijw',
+							duration: '1h y cuarto',
+							time: 'PT1H15M'
+						}
+					]
+				},
+				{
+					name: '02 - Módulo de vídeos destacados',
+					videos: [
+						{
+							link: 'https://www.twitch.tv/videos/1016566325',
+							duration: 'Casi 1h',
+							time: 'PT1H'
+						}
+					]
+				},
+				{
+					name: '03 - Footer 1/2',
+					videos: [
+						{
+							link: 'https://www.twitch.tv/videos/1024538864',
+							duration: '1h y cuarto',
+							time: 'PT1H15M'
+						}
+					]
+				},
+				{
+					name: '04 - Footer 2/2',
+					videos: [
+						{
+							link: 'https://www.twitch.tv/videos/1032377438',
+							duration: 'Dos horacas',
+							time: 'PT2H'
+						}
+					]
+				}
+			] %}
+			<ol class="chuck__readme-videos">
+				{% for video in videos %}
+					<li class="chuck__readme-video">
+						<div class="video">
+							<strong class="video__name">{{video.name}}</strong> |
+							{% for item in video.videos %}
+								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
+							{% endfor %}
+						</div>
+					</li>
+				{% endfor %}
+			</ol>
+		</div>
+
+		<div class="chuck__readme-block">
+			<h3 class="chuck__readme-subtitle">Temas siguientes</h3>
+			<ul class="chuck__readme-topics">
+				<li>CSS, introducción y cómo funciona.</li>
+				<li>CSS a mano: Display</li>
+				<li>CSS a mano: Posicionamiento</li>
+				<li>CSS a mano: Flex</li>
+				<li>CSS a mano: Grid</li>
+				<li>Preprocesadores</li>
+				<li>Configurar nuestro editor
+					<ul>
+						<li>Extensiones</li>
+						<li>Editorconfig</li>
+					</ul>
+				</li>
+				<li>Linter de css/scss</li>
+				<li>Organizar nuestro proyecto</li>
+			</ul>
+			<p class="chuck__readme-contribute">
+				<a href="https://github.com/oneeyedman/maquetando-con-chuck/issues/1">👍 Quieres proponer un tema o elemento?</a>
+			</p>
+		</div>
+	</div>
+</article>

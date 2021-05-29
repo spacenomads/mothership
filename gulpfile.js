@@ -80,6 +80,16 @@ function icons()  {
 
 
 
+// > Copy Fonts
+function fonts()  {
+	return src(config.fonts.src)
+		.pipe(dest(config.fonts.dest));
+}
+
+
+
+
+
 // > Copy Images
 function images() {
 	return src(config.images.src)
@@ -255,6 +265,17 @@ function iconsPro()  {
 
 
 
+
+// > Copy Fonts into production folder
+function fontsPro() {
+	return src(config.fonts.src)
+		.pipe(dest(config.fonts.pro));
+}
+
+
+
+
+
 // > Copy Images into production folder
 function imagesPro() {
 	return src(config.images.src)
@@ -333,21 +354,21 @@ function scriptsMinPro() {
 
 
 // > Generate public folder
-const defaultTasks = series(clean, icons, images, humansTXT, vendorJS, templates, styles, scripts);
+const defaultTasks = series(clean, icons, fonts, images, humansTXT, vendorJS, templates, styles, scripts);
 
 
 
 
 
 // > Generate public folder
-const deploy = series(clean, icons, images, humansTXT, vendorJS, templatesMin, stylesMin, scriptsMin);
+const deploy = series(clean, icons, fonts, images, humansTXT, vendorJS, templatesMin, stylesMin, scriptsMin);
 
 
 
 
 
 // > Generate public folder
-const production = series(cleanPro, mail, iconsPro, imagesPro, humansTXTPro, vendorJSPro, templatesMinPro, stylesMinPro, scriptsMinPro, cname);
+const production = series(cleanPro, mail, iconsPro, fontsPro, imagesPro, humansTXTPro, vendorJSPro, templatesMinPro, stylesMinPro, scriptsMinPro, cname);
 
 
 
@@ -362,6 +383,7 @@ const go = series(defaultTasks, cb => {
 		online: false
 	});
 	watch(config.watch.images, series(images, bsReload));
+	watch(config.watch.fonts, series(fonts, bsReload));
 	watch(config.watch.vendorJS, series(vendorJS, bsReload));
 	watch(config.watch.humansTXT, humansTXT);
 	watch(config.watch.styles, styles);
@@ -393,6 +415,8 @@ module.exports = {
 	mail,
 	icons,
 	iconsPro,
+	fonts,
+	fontsPro,
 	images,
 	imagesPro,
 	humansTXT,
