@@ -110,6 +110,13 @@
 	font-size: rem(18);
 	line-height: 156%;
 
+	.page__wrapper {
+		@include mq($bp_tablet) {
+			padding: 0 rem(20);
+			box-sizing: border-box;
+		}
+	}
+
 	a {
 		color: $color_chuck;
 		text-decoration: none;
@@ -122,6 +129,45 @@
 
 .chuck__readme-title,
 .chuck__readme-subtitle {
-	color: $color_chuck;
-	margin: 0 0 rem(20);
+	color: mix($color_chuck_light, $color_chuck);
+	margin: 0 0 rem(5);
+	font-weight: $font_semibold;
+	position: relative;
+	padding-bottom: rem(10);
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: rem(30);
+		height: rem(1);
+		background-color: mix($color_chuck_light, $color_chuck, 20%);
+	}
+}
+
+
+
+
+
+.chuck__readme-videos {
+	list-style: none;
+	padding-left: rem(20);
+}
+
+.chuck__readme-video {}
+
+.video {}
+
+.video__name {
+	font-weight: $font_semibold;
+}
+
+.video__link {}
+
+.video__duration {
+	font-size: small;
+	border: 1px solid $color_chuck;
+	padding: 0 .25em;
+
 }

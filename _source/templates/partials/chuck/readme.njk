@@ -12,28 +12,80 @@
 		<div class="chuck__readme-block">
 			<h2 class="chuck__readme-subtitle">Sesiones</h2>
 			<p>Durante unos días los vídeos seguirán en el canal de Twitch pero luego los dejaré subidos en Youtube en <a href="https://www.youtube.com/playlist?list=PLO-mtrYE0827SRqJnPOOU1OQLbN_OZpT6">esta playlist</a>.</p>
-			<ol>
-				<li>
-					<strong>00 -Tooltip</strong> | <a href="https://www.youtube.com/watch?v=pwtNFzrbNAM">Vídeo 1:<code>45 min</code></a>, <a href="https://www.youtube.com/watch?v=SqGFoHnJg60">vídeo 2: <code>casi 1h</code> </a>
-				</li>
-				<li>
-					<strong>01 - HTML (y semántica)</strong> | <a href="https://www.youtube.com/watch?v=5vATBkG4Ijw">Vídeo: <code>1h y cuarto</code></a>
-				</li>
-				<li>
-					<strong>02 - Módulo de vídeos destacados</strong> | <a href="https://www.twitch.tv/videos/1016566325">Vídeo: <code>casi 1h</code></a>
-				</li>
-				<li>
-					<strong>03 - Footer 1/2</strong> | <a href="https://www.twitch.tv/videos/1024538864">Vídeo: <code>1h y cuarto</code></a>
-				</li>
-				<li>
-					<strong>04 - Footer 2/2</strong> | <a href="https://www.twitch.tv/videos/1032377438">Vídeo: <code>dos horacas</code></a>
-				</li>
+			{% set videos = [
+				{
+					name: '00 - Tooltip',
+					videos: [
+						{
+							link: 'https://www.youtube.com/watch?v=pwtNFzrbNAM',
+							duration: '45 min',
+							time: 'PT45M'
+						},
+						{
+							link: 'https://www.youtube.com/watch?v=SqGFoHnJg60',
+							duration: 'Casi 1h',
+							time: 'PT1H'
+						}
+					]
+				},
+				{
+					name: '01 - HTML (y semántica)',
+					videos: [
+						{
+							link: 'https://www.youtube.com/watch?v=5vATBkG4Ijw',
+							duration: '1h y cuarto',
+							time: 'PT1H15M'
+						}
+					]
+				},
+				{
+					name: '02 - Módulo de vídeos destacados',
+					videos: [
+						{
+							link: 'https://www.twitch.tv/videos/1016566325',
+							duration: 'Casi 1h',
+							time: 'PT1H'
+						}
+					]
+				},
+				{
+					name: '03 - Footer 1/2',
+					videos: [
+						{
+							link: 'https://www.twitch.tv/videos/1024538864',
+							duration: '1h y cuarto',
+							time: 'PT1H15M'
+						}
+					]
+				},
+				{
+					name: '04 - Footer 2/2',
+					videos: [
+						{
+							link: 'https://www.twitch.tv/videos/1032377438',
+							duration: 'Dos horacas',
+							time: 'PT2H'
+						}
+					]
+				}
+			] %}
+			<ol class="chuck__readme-videos">
+				{% for video in videos %}
+					<li class="chuck__readme-video">
+						<div class="video">
+							<strong class="video__name">{{video.name}}</strong> |
+							{% for item in video.videos %}
+								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
+							{% endfor %}
+						</div>
+					</li>
+				{% endfor %}
 			</ol>
 		</div>
 
 		<div class="chuck__readme-block">
 			<h3 class="chuck__readme-subtitle">Temas siguientes</h3>
-			<ul>
+			<ul class="chuck__readme-topics">
 				<li>CSS, introducción y cómo funciona.</li>
 				<li>CSS a mano: Display</li>
 				<li>CSS a mano: Posicionamiento</li>
@@ -48,10 +100,10 @@
 				</li>
 				<li>Linter de css/scss</li>
 				<li>Organizar nuestro proyecto</li>
-				<li>
-					<a href="https://github.com/oneeyedman/maquetando-con-chuck/issues/1">👍 Quieres proponer un tema o elemento?</a>
-				</li>
 			</ul>
+			<p class="chuck__readme-contribute">
+				<a href="https://github.com/oneeyedman/maquetando-con-chuck/issues/1">👍 Quieres proponer un tema o elemento?</a>
+			</p>
 		</div>
 	</div>
 </article>
