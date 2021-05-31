@@ -11,11 +11,13 @@
 
 {% block content %}
 
-	{% include "partials/chuck/header.njk" %}
+	{% include "partials/chuck/_header.njk" %}
 
 	<main class="page__main">
-		{% include "partials/chuck/readme.njk" %}
+		{% include "partials/chuck/_readme.njk" %}
 	</main>
+
+	{% include "partials/chuck/_footer.njk" %}
 {% endblock %}
 
 {% block js %}

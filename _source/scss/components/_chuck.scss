@@ -163,11 +163,77 @@
 	font-weight: $font_semibold;
 }
 
-.video__link {}
-
 .video__duration {
 	font-size: small;
 	border: 1px solid $color_chuck;
 	padding: 0 .25em;
+}
 
+
+
+
+
+.chuck__footer {
+	border-top: 2px solid mix($color_chuck_light, $color_chuck);
+}
+
+.chuck__footer-actions {
+	@extend %unlist;
+
+	display: flex;
+}
+
+.chuck__footer-action {}
+
+.chuck__footer-link {
+	display: block;
+	height: rem(1);
+	padding-top: rem(35);
+	overflow: hidden;
+	width: rem(36);
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		width: rem(40);
+		height: rem(40);
+		background: img('sprite-social.svg', $chuck) left top no-repeat;
+	}
+}
+
+.chuck__footer-link--github {
+	&::before {
+		background-position: rem(40 * 0) top;
+	}
+	&:hover {
+		&::before {
+			background-position: rem(40 * 0) bottom;
+		}
+	}
+}
+
+.chuck__footer-link--twitch {
+	&::before {
+		background-position: rem(40 * -1) top;
+	}
+	&:hover {
+		&::before {
+			background-position: rem(40 * -1) bottom;
+		}
+	}
+}
+
+.chuck__footer-link--youtube {
+	&::before {
+		background-position: rem(40 * -2) top;
+	}
+	&:hover {
+		&::before {
+			background-position: rem(40 * -2) bottom;
+		}
+	}
 }
