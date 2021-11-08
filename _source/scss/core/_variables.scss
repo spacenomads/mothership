@@ -8,7 +8,7 @@ $color_black: #000;
 $color_blue: #07c;
 
 $color_chuck_light: #79c8f8;
-$color_chuck: #006cce;
+$color_chuck: #008aff;
 $color_chuch_default: $color_blue;
 
 $color_title: $color_black;
@@ -43,6 +43,7 @@ $font_fallback: arial, sans-serif;
 $font_text: 'Roboto', $font_fallback;
 $font_text-alt: 'Roboto Slab', $font_fallback;
 $font-chuck: 'Source Sans Pro', $font_fallback;
+$font-chuck: $font_text-alt;
 $font_size: 16;
 $font_line_height: 130%;
 
