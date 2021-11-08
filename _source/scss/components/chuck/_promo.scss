@@ -1,11 +1,13 @@
 .chuck__promo {
 	border: rem(2) dashed #e4e5e6;
 	border-radius: rem(10);
-	height: rem(200);;
+	height: rem(300);
 	margin: 3em auto;
-	max-width: 320px;
+	max-width: 350px;
 	padding: rem(30);
 	text-align: center;
+	position: relative;
+	box-sizing: border-box;
 }
 
 .chuck__promo-title {
@@ -64,4 +66,10 @@
 	100% {
 		transform: translate(-50%, -50%) rotate(180deg);
 	}
+}
+
+.chuck__current-coffees {
+	color: $color-coffee;
+	font-size: .75em;
+	transform: translateY(1em);
 }
