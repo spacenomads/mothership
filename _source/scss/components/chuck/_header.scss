@@ -33,11 +33,15 @@
 }
 
 .chuck-header__title {
-	font-size: rem(30);
+	font-size: rem(34);
 	font-weight: $font_black;
 	letter-spacing: rem(.571429);
 	line-height: lh(38, 30);
 	margin: 0 0 rem(5);
+
+	@include mq(540) {
+		font-size: rem(36);
+	}
 }
 
 .chuck-header__streaming {
