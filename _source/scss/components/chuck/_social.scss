@@ -1,0 +1,37 @@
+.social {
+	@extend %unlist;
+
+	column-gap: rem(2);
+	display: flex;
+}
+
+.social__link {
+	background: img('sprite-social-header.svg', $chuck) left top no-repeat rgba($color-chuck, .05);
+	border-radius: rem(3);
+	display: block;
+	height: rem(1);
+	overflow: hidden;
+	padding-top: rem(40);
+	transition: background-color ease .5s;
+	width: rem(40);
+
+	&:hover {
+		background-color: rgba($color-chuck, .2);
+	}
+}
+
+.social__link--twitter {
+	background-position: rem(40 * 0) top;
+}
+
+.social__link--github {
+	background-position: rem(40 * -1) top;
+}
+
+.social__link--twitch {
+	background-position: rem(40 * -2) top;
+}
+
+.social__link--youtube {
+	background-position: rem(40 * -3) top;
+}
