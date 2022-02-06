@@ -70,6 +70,19 @@ function clean(cb) {
 
 
 
+// > Create CNAME file into development folder
+function cname() {
+	return src(config.cname.src)
+		.pipe(rename(path => {
+			path.basename = config.cname.name;
+			path.extname = '';
+		}))
+		.pipe(dest(config.cname.dest));
+}
+
+
+
+
 // > Copy Icons
 function icons()  {
 	return src(config.icons.src)
@@ -232,13 +245,13 @@ function mail() {
 
 
 // > Create CNAME file into production folder
-function cname() {
+function cnamePro() {
 	return src(config.cname.src)
 		.pipe(rename(path => {
 			path.basename = config.cname.name;
 			path.extname = '';
 		}))
-		.pipe(dest(config.cname.docs));
+		.pipe(dest(config.cname.pro));
 }
 
 
@@ -354,21 +367,21 @@ function scriptsMinPro() {
 
 
 // > Generate public folder
-const defaultTasks = series(clean, icons, fonts, images, humansTXT, vendorJS, templates, styles, scripts);
+const defaultTasks = series(clean, icons, fonts, images, humansTXT, vendorJS, templates, styles, scripts, cname);
 
 
 
 
 
 // > Generate public folder
-const deploy = series(clean, icons, fonts, images, humansTXT, vendorJS, templatesMin, stylesMin, scriptsMin);
+const deploy = series(clean, icons, fonts, images, humansTXT, vendorJS, templatesMin, stylesMin, scriptsMin, cname);
 
 
 
 
 
 // > Generate public folder
-const production = series(cleanPro, mail, iconsPro, fontsPro, imagesPro, humansTXTPro, vendorJSPro, templatesMinPro, stylesMinPro, scriptsMinPro, cname);
+const production = series(cleanPro, mail, iconsPro, fontsPro, imagesPro, humansTXTPro, vendorJSPro, templatesMinPro, stylesMinPro, scriptsMinPro, cnamePro);
 
 
 
@@ -412,6 +425,7 @@ module.exports = {
 	clean,
 	cleanPro,
 	cname,
+	cnamePro,
 	mail,
 	icons,
 	iconsPro,

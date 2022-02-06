@@ -5,7 +5,8 @@
   },
   "cname": {
     "src": "_source/config/custom-domain.txt",
-    "docs": "docs",
+    "dest": "public",
+    "pro": "docs",
     "name": "CNAME"
   },
 	"zip": {

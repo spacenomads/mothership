@@ -7,6 +7,7 @@
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-combine-mq": "*",
     "gulp-concat": "*",
@@ -21,10 +22,9 @@
     "gulp-sourcemaps": "*",
     "gulp-uglify": "*",
     "gulp-zip": "^5.0.1",
-    "gulp": "^4.0.2",
+    "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.17.1",
-    "stylelint": "^13.3.3"
+    "stylelint-scss": "^3.17.1"
   },
   "bugs": {
     "url": "https://github.com/spacenomads/Asteroids/issues"
