@@ -12,10 +12,10 @@ const nunjucksRender = require('gulp-nunjucks-render');
 const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const rename = require('gulp-rename');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('node-sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const zip = require('gulp-zip');
-const plugins = [mqpacker({ sort: true })];
+
 
 
 
@@ -153,12 +153,12 @@ function templates() {
 
 // > Process SASS/SCSS files to generate final css files in 'public' folder
 function styles() {
+	const plugins = [mqpacker({ sort: true })];
 	return src(config.styles.src)
 		.pipe(sourcemaps.init())
-		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 		.pipe(sass({
 			outputStyle: 'extended',
-		}))
+		}).on('error', sass.logError))
 		.pipe(postcss(plugins))
 		.pipe(autoprefixer({
 			cascade: false
@@ -204,11 +204,11 @@ function templatesMin() {
 
 // > Process SASS/SCSS files to generate final css files into 'public' folder
 function stylesMin() {
+	const plugins = [mqpacker({ sort: true })];
 	return src(config.styles.src)
-		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 		.pipe(sass({
 			outputStyle: 'compressed',
-		}))
+		}).on('error', sass.logError))
 		.pipe(postcss(plugins))
 		.pipe(autoprefixer({
 			cascade: false
@@ -338,11 +338,11 @@ function templatesMinPro() {
 
 // > Process SASS/SCSS files to generate final css files into production folder
 function stylesMinPro() {
+	const plugins = [mqpacker({ sort: true })];
 	return src(config.styles.src)
-		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
 		.pipe(sass({
 			outputStyle: 'compressed',
-		}))
+		}).on('error', sass.logError))
 		.pipe(postcss(plugins))
 		.pipe(autoprefixer({
 			cascade: false
