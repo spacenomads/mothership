@@ -3,6 +3,7 @@ const { src, dest, series, watch } = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const config = require('./config.json');
+const data = require('gulp-data');
 const del = require('del');
 const htmlbeautify = require('gulp-html-beautify');
 const htmlmin = require('gulp-htmlmin');
@@ -15,6 +16,39 @@ const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('node-sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const zip = require('gulp-zip');
+const fs = require('fs');
+const settings = getSettings('./_source/data/settings.json');
+
+
+
+
+
+function getSettings(path) {
+	const settings = JSON.parse(fs.readFileSync(path));
+	settings.year = getYear();
+	settings.version = getStaticsVersion();
+	return settings;
+}
+
+
+
+
+
+function getYear() {
+	const today = new Date();
+	return today.getFullYear();
+}
+
+
+
+
+
+function getStaticsVersion() {
+	const version = new Date()
+		.toISOString()
+		.replace(/[^A-SU-Y0-9]/g, '');
+	return version;
+}
 
 
 
@@ -137,6 +171,7 @@ function humansTXT() {
 function templates() {
 	return src(config.templates.src)
 		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+		.pipe(data(settings))
 		.pipe(nunjucksRender({
 			path: [config.templates.path]
 		}))
@@ -189,6 +224,7 @@ function scripts() {
 function templatesMin() {
 	return src(config.templates.src)
 		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+		.pipe(data(settings))
 		.pipe(nunjucksRender({
 			path: [config.templates.path]
 		}))
@@ -323,6 +359,7 @@ function humansTXTPro() {
 function templatesMinPro() {
 	return src(config.templates.src)
 		.pipe(plumber({errorHandler: notify.onError('Error: <%= error.message %>')}))
+		.pipe(data(settings))
 		.pipe(nunjucksRender({
 			path: [config.templates.path]
 		}))
