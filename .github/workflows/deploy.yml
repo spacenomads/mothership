@@ -1,4 +1,4 @@
-name: Build lemonade
+name: Build mothership!
 on:
   push:
     branches:
