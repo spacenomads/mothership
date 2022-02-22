@@ -23,6 +23,7 @@ const settings = getSettings('./_source/data/settings.json');
 
 
 
+// ANCHOR UTILS
 function getSettings(path) {
 	const settings = JSON.parse(fs.readFileSync(path));
 	settings.year = getYear();
@@ -31,16 +32,10 @@ function getSettings(path) {
 }
 
 
-
-
-
 function getYear() {
 	const today = new Date();
 	return today.getFullYear();
 }
-
-
-
 
 
 function getStaticsVersion() {
@@ -49,9 +44,6 @@ function getStaticsVersion() {
 		.replace(/[^A-SU-Y0-9]/g, '');
 	return version;
 }
-
-
-
 
 
 // > Generate a cool timestamp (YYMMDD)
@@ -63,9 +55,6 @@ function getTimestamp() {
 	const timestamp = yy + mm + dd;
 	return timestamp;
 }
-
-
-
 
 
 // > Get a project name argument ;)
@@ -81,17 +70,11 @@ function getProject(arr) {
 }
 
 
-
-
-
 // > Force a browser page reload
 function bsReload(cb) {
 	browserSync.reload();
 	cb();
 }
-
-
-
 
 
 // > Delete Public folder
@@ -104,6 +87,7 @@ function clean(cb) {
 
 
 
+// ANCHOR DEV
 // > Create CNAME file into development folder
 function cname() {
 	return src(config.cname.src)
@@ -115,16 +99,11 @@ function cname() {
 }
 
 
-
-
 // > Copy Icons
 function icons()  {
 	return src(config.icons.src)
 		.pipe(dest(config.icons.dest));
 }
-
-
-
 
 
 // > Copy Fonts
@@ -134,17 +113,11 @@ function fonts()  {
 }
 
 
-
-
-
 // > Copy Images
 function images() {
 	return src(config.images.src)
 		.pipe(dest(config.images.dest));
 }
-
-
-
 
 
 // > Copy Vendor JS (Jquery, Modernizr..)
@@ -154,17 +127,11 @@ function vendorJS() {
 }
 
 
-
-
-
 // > Copy humansTXT
 function humansTXT() {
 	return src(config.humansTXT.src)
 		.pipe(dest(config.humansTXT.dest));
 }
-
-
-
 
 
 // > Process Nunjucks files into 'public' folder
@@ -181,9 +148,6 @@ function templates() {
 		}))
 		.pipe(dest(config.templates.dest));
 }
-
-
-
 
 
 // > Process SASS/SCSS files to generate final css files in 'public' folder
@@ -204,9 +168,6 @@ function styles() {
 }
 
 
-
-
-
 // > Process JS scripts into a single JS file inside 'assets/js' folder
 function scripts() {
 	return src(config.scripts.src)
@@ -220,6 +181,7 @@ function scripts() {
 
 
 
+// ANCHOR DEV:MIN
 // > Process production-ready Nunjucks files into 'public' folder
 function templatesMin() {
 	return src(config.templates.src)
@@ -233,9 +195,6 @@ function templatesMin() {
 		}))
 		.pipe(dest(config.templates.dest));
 }
-
-
-
 
 
 // > Process SASS/SCSS files to generate final css files into 'public' folder
@@ -254,9 +213,6 @@ function stylesMin() {
 }
 
 
-
-
-
 // > Process JS scripts into a single minified JS file inside 'assets/js' folder
 function scriptsMin() {
 	return src(config.scripts.src)
@@ -269,15 +225,12 @@ function scriptsMin() {
 
 
 
-// GITHUB PAGES
+// ANCHOR GITHUB PAGES
 // > Move mail images into production folder
 function mail() {
 	return src(config.mail.src)
-		.pipe(dest(config.mail.pro));
+		.pipe(dest(config.mail.dest));
 }
-
-
-
 
 
 // > Create CNAME file into production folder
@@ -291,9 +244,6 @@ function cnamePro() {
 }
 
 
-
-
-
 // > Delete production folder
 function cleanPro(cb) {
 	del.sync(['docs']);
@@ -303,16 +253,12 @@ function cleanPro(cb) {
 
 
 
-
+// ANCHOR PRO
 // > Copy Icons into production folder
 function iconsPro()  {
 	return src(config.icons.src)
 		.pipe(dest(config.icons.pro));
 }
-
-
-
-
 
 
 // > Copy Fonts into production folder
@@ -322,17 +268,11 @@ function fontsPro() {
 }
 
 
-
-
-
 // > Copy Images into production folder
 function imagesPro() {
 	return src(config.images.src)
 		.pipe(dest(config.images.pro));
 }
-
-
-
 
 
 // > Copy Vendor JS (Modernizr..) into production folder
@@ -342,17 +282,11 @@ function vendorJSPro() {
 }
 
 
-
-
-
 // > Copy humansTXT into production folder
 function humansTXTPro() {
 	return src(config.humansTXT.src)
 		.pipe(dest(config.humansTXT.pro));
 }
-
-
-
 
 
 // > Process production-ready Nunjucks files into production folder
@@ -370,9 +304,6 @@ function templatesMinPro() {
 }
 
 
-
-
-
 // > Process SASS/SCSS files to generate final css files into production folder
 function stylesMinPro() {
 	const plugins = [mqpacker({ sort: true })];
@@ -388,9 +319,6 @@ function stylesMinPro() {
 }
 
 
-
-
-
 // > Process JS scripts into production folder
 function scriptsMinPro() {
 	return src(config.scripts.src)
@@ -400,28 +328,17 @@ function scriptsMinPro() {
 }
 
 
-
+// ANCHOR MAIN TASKS
+// > Generate public folder
+const defaultTasks = series(clean, icons, fonts, images, humansTXT, mail, vendorJS, templates, styles, scripts, cname);
 
 
 // > Generate public folder
-const defaultTasks = series(clean, icons, fonts, images, humansTXT, vendorJS, templates, styles, scripts, cname);
-
-
-
-
-
-// > Generate public folder
-const deploy = series(clean, icons, fonts, images, humansTXT, vendorJS, templatesMin, stylesMin, scriptsMin, cname);
-
-
-
+const deploy = series(clean, icons, fonts, images, humansTXT, mail, vendorJS, templatesMin, stylesMin, scriptsMin, cname);
 
 
 // > Generate public folder
 const production = series(cleanPro, mail, iconsPro, fontsPro, imagesPro, humansTXTPro, vendorJSPro, templatesMinPro, stylesMinPro, scriptsMinPro, cnamePro);
-
-
-
 
 
 // > Create a development server with BrowserSync
@@ -443,9 +360,6 @@ const go = series(defaultTasks, cb => {
 });
 
 
-
-
-
 // > ZIP the public folder
 const zipit = series(deploy, () => {
 	return src(config.zip.src)
@@ -457,7 +371,7 @@ const zipit = series(deploy, () => {
 
 
 
-// Final tasks
+// ANCHOR Public tasks
 module.exports = {
 	clean,
 	cleanPro,

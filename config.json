@@ -1,6 +1,7 @@
 {
   "mail": {
     "src": "_source/mail/**/*.{gif,jpg,jpeg,png,svg}",
+    "dest": "public/mail",
     "pro": "docs/mail"
   },
   "cname": {
