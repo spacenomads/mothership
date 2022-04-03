@@ -16,6 +16,34 @@
 
 			<p>Y todo el código estará en abierto en un <a href="https://github.com/oneeyedman/maquetando-con-chuck">repo de Github</a></p>
 
+			<h3 class="chuck__readme-subtitle">Temporada 3</h3>
+			{% set videos = [
+				{
+					name: 's03_e01 - Estilos para lista de tareas',
+					videos: [
+						{
+							link: 'https://www.twitch.tv/videos/1445012341',
+							duration: 'Casi hora y media',
+
+							time: 'PT1H23M'
+						}
+					]
+				}
+			] %}
+
+			<ol class="chuck__readme-videos">
+				{% for video in videos %}
+					<li class="chuck__readme-video">
+						<div class="video">
+							<strong class="video__name">{{video.name}}</strong> |
+							{% for item in video.videos %}
+								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
+							{% endfor %}
+						</div>
+					</li>
+				{% endfor %}
+			</ol>
+
 			<h3 class="chuck__readme-subtitle">Temporada 2</h3>
 			{% set videos = [
 				{
