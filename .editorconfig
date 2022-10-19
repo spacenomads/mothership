@@ -3,9 +3,13 @@
 # top-most EditorConfig file
 root = true
 # Unix-style newlines with a newline ending every file
+# urf-8 character set
+# Remove any whitespace characters preceding newline characters
 [*]
+charset = utf-8
 end_of_line = lf
 insert_final_newline = true
+trim_trailing_whitespace = true
 
 # 2 tabs indentation
 [*]
@@ -13,14 +17,6 @@ indent_style = tab
 indent_size = 2
 
 # 2 space indentation for .json and .md files
-[*.{json, md}]
+[*.{json,md,yml}]
 indent_style = space
 indent_size = 2
-
-# urf-8 character set
-[*]
-charset = utf-8
-
-# Remove any whitespace characters preceding newline characters
-[*]
-trim_trailing_whitespace = true

@@ -205,3 +205,5 @@ $RECYCLE.BIN/
 
 # Project
 public
+.vscode
+.idea
