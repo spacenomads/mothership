@@ -31,4 +31,3 @@ function initPage(page) {
 
 
 initPage(body);
-console.log('YAY 🦄');
