@@ -1,0 +1,28 @@
+---
+title: Spacenomads,
+layout: layouts/main.njk
+id: landing
+template: tpl__landing
+classes:
+description: Space Nomads es una idea acerca de cómo crecer y afrontar los nuevos retos que el trabajo presenta cada día.
+eleventyNavigation:
+  key: home
+---
+
+<main class="page__main" data-published="automatic">
+	<div class="page__wrapper">
+		<h1 class="landing__brand">
+			<span class="landing__brand-label">{{ settings.site_name }}</span>
+		</h1>
+		<h2 class="landing__status">{{ settings.site_subtitle }}</h2>
+	</div>
+</main>
+
+{% include "partials/_footer.njk" %}
+
+<div class="space">
+	<div class="stars stars--small"></div>
+	<div class="stars stars--medium"></div>
+	<div class="stars stars--big"></div>
+</div>
+
