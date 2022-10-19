@@ -1,0 +1,17 @@
+// LAYOUT
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.landing {
+	.page {
+		height: inherit;
+		overflow: hidden;
+	}
+
+	.page__wrapper {
+		padding: 0 rem(50);
+	}
+}

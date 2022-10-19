@@ -1,50 +1,53 @@
 {
-  "name": "asteroids",
-  "version": "2.0.0",
-  "description": "Space Nomads' web starter kit",
-  "main": "public/index.html",
+  "name": "mothership",
+  "version": "3.0.0",
+  "description": "Space Nomads' website",
+  "main": "dist/index.html",
   "devDependencies": {
+    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy-navigation": "^0.3.5",
     "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker",
-    "browser-sync": "^2.26.7",
-    "del": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.8.0",
+    "eslint-config-recommended": "^4.1.0",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-concat": "*",
-    "gulp-data": "^1.3.1",
-    "gulp-html-beautify": "^1.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-notify": "*",
-    "gulp-nunjucks-render": "*",
-    "gulp-plumber": "*",
-    "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "*",
-    "gulp-uglify": "*",
-    "gulp-zip": "^5.0.1",
-    "node-sass": "^7.0.0",
-    "stylelint": "^13.3.3",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-scss": "^3.17.1"
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-if": "^3.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-zip": "^5.1.0",
+    "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.17",
+    "sass": "^1.55.0",
+    "stylelint": "^14.13.0",
+    "stylelint-config-standard-scss": "^5.0.0"
   },
   "bugs": {
-    "url": "https://github.com/spacenomads/Asteroids/issues"
+    "url": "https://github.com/spacenomads/mothership/issues"
   },
   "scripts": {
-    "start": "gulp go",
-    "deploy": "gulp deploy",
-    "ghpages": "gulp production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "(npm run clean || true) && npm run build:assets && eleventy",
+    "build:pro": "cross-env MODE=pro npm run build",
+    "watch": "eleventy --watch",
+    "serve": "npm run clean && eleventy --serve",
+    "start": "cross-env MODE=dev npm-run-all --parallel watch:assets serve",
+    "watch:assets": "gulp go",
+    "build:assets": "gulp build",
+    "clean": "rm -rf dist/*",
+    "debug": "DEBUG=* eleventy"
   },
   "browserslist": [
     "last 2 versions",
-    "ie >= 11"
+    "ie >= 10"
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:spacenomads/Asteroids.git"
+    "url": "git+ssh://git@github.com:spacenomads/mothership.git"
   },
   "author": "Space Nomads",
   "license": "CC0-1.0",
-  "homepage": "https://github.com/spacenomads/Asteroids"
+  "homepage": "https://github.com/spacenomads/mothership"
 }

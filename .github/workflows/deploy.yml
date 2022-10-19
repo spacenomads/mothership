@@ -1,4 +1,4 @@
-name: Build mothership!
+name: Build lemonade
 on:
   push:
     branches:
@@ -14,13 +14,13 @@ jobs:
 
       - name: Install dependencies & build
         run: |
-          npm ci
-          npm run deploy
+          npm ci gulp-cli
+          npm run build:pro
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: public
+          folder: dist
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

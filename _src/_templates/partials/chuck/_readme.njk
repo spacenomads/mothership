@@ -1,0 +1,79 @@
+<article class="chuck__readme">
+	<div class="page__wrapper">
+		<div class="chuck__readme-block">
+			<h1 class="chuck__readme-title">{{ title }}</h1>
+
+			<p>Maquetar es de las cosas que más me molan, que más impacto tiene y que menos se respetan.</p>
+			<p>Por eso, el domingo quiero dedicar un rato a <strong>maquetar en directo</strong>. A recalcar la importancia de la <strong>semántica</strong>, a animarnos a hacer nuestos componentes <strong>accesibles</strong> y a que todo el javascript del mundo da igual sin una base sólida de HTML y CSS.</p>
+			<p><strong>¿Te bajas a maquetar?</strong> ¿o qué?</p>
+		</div>
+
+		{% include "./_promo.njk" %}
+
+		<div class="chuck__readme-block">
+			<h2 class="chuck__readme-subtitle">Sesiones</h2>
+			<p>Durante unos días los vídeos seguirán en el <a href="https://twitch.tv/guanaiman">canal de Twitch</a> pero luego los dejaré subidos en <a href="https://www.youtube.com/c/chuck-as-usual">mi canal de Youtube</a>, recogidos además en <a href="https://www.youtube.com/playlist?list=PLO-mtrYE0827SRqJnPOOU1OQLbN_OZpT6">esta playlist</a>.</p>
+
+			<p>Y todo el código estará en abierto en un <a href="https://github.com/oneeyedman/maquetando-con-chuck">repo de Github</a></p>
+
+			<h3 class="chuck__readme-subtitle">Temporada 3</h3>
+
+			<ol class="chuck__readme-videos">
+				{% for video in seasons.s3 %}
+					<li class="chuck__readme-video">
+						<div class="video">
+							<strong class="video__name">{{video.name}}</strong> |
+							{% for item in video.videos %}
+								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
+							{% endfor %}
+						</div>
+					</li>
+				{% endfor %}
+			</ol>
+
+			<h3 class="chuck__readme-subtitle">Temporada 2</h3>
+
+			<ol class="chuck__readme-videos">
+				{% for video in seasons.s2 %}
+					<li class="chuck__readme-video">
+						<div class="video">
+							<strong class="video__name">{{video.name}}</strong> |
+							{% for item in video.videos %}
+								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
+							{% endfor %}
+						</div>
+					</li>
+				{% endfor %}
+			</ol>
+
+			<h3 class="chuck__readme-subtitle">Temporada 1</h3>
+
+			<ol class="chuck__readme-videos">
+				{% for video in seasons.s1 %}
+					<li class="chuck__readme-video">
+						<div class="video">
+							<strong class="video__name">{{video.name}}</strong> |
+							{% for item in video.videos %}
+								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
+							{% endfor %}
+						</div>
+					</li>
+				{% endfor %}
+			</ol>
+		</div>
+
+		<div class="chuck__readme-block">
+			<h3 class="chuck__readme-subtitle">Temas siguientes</h3>
+			<ul class="chuck__readme-topics">
+				<li>Conceptos de diseño para frontenders o no diseñistas</li>
+				<li>Una web fácil (personal, portfolio, cv online)</li>
+				<li>Linter JS: Eslint</li>
+				<li>Linter CSS: Stylelint</li>
+				<li>Sass Dart</li>
+			</ul>
+			<p class="chuck__readme-contribute">
+				<a href="https://github.com/oneeyedman/maquetando-con-chuck/issues/1">👍 Quieres proponer un tema o elemento?</a>
+			</p>
+		</div>
+	</div>
+</article>
