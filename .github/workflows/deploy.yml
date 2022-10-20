@@ -1,4 +1,4 @@
-name: Build lemonade
+name: Beam me up!
 on:
   push:
     branches:
