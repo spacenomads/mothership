@@ -11,7 +11,7 @@
 	display: block;
 	height: rem(1);
 	overflow: hidden;
-	padding-top: rem(40);
+	padding-top: rem(39);
 	transition: background-color ease .5s;
 	width: rem(40);
 
@@ -20,7 +20,7 @@
 	}
 }
 
-.social__link--twitter {
+.social__link--mastodon {
 	background-position: rem(40 * 0) top;
 }
 
