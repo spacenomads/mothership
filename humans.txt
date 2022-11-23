@@ -4,7 +4,7 @@
 
 /* TEAM */
 Frontend: Carlos Mañas
-Twitter: @oneeneydman
+Mastodon: https://mastodon.social/@oneeneydman
 Contact: carlos@spacenomads.com
 
 
