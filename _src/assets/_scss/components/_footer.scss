@@ -93,6 +93,16 @@
 		}
 	}
 
+	.page__footer-item--screen-size {
+		background: img('../screen-size/screensize-icon.svg') center no-repeat;
+		background-size: cover;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
 
 	.page__footer-item--with-tooltip {
 		overflow: hidden;
