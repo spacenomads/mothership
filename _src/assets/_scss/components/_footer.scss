@@ -103,6 +103,23 @@
 		}
 	}
 
+	.page__footer-item--cookies {
+		background: $color-white;
+
+		&::before {
+			background: none;
+			content: '🍪';
+			line-height: 1;
+			font-size: 2em;
+			width: unset;
+			height: unset;
+		}
+
+		&::after {
+			display: none;
+		}
+	}
+
 
 	.page__footer-item--with-tooltip {
 		overflow: hidden;
