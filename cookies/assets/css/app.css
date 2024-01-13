@@ -1,0 +1,76 @@
+@import 'core.css';
+@import 'header.css';
+@import 'themes.css';
+@import 'account.css';
+
+
+
+
+/*APP*/
+.🍪 {
+	color: var(--theme-text);
+	background-color: var(--theme-bg);
+	font-family: var(--font-family);
+	font-size: 100%;
+	font-weight: 300;
+	line-height: 1.75;
+	letter-spacing: .01em;
+}
+
+
+.🍪__wrapper {
+	margin-inline: calc(var(--margin-h) / var(--font-size) * 1rem);
+	max-inline-size: calc(var(--width-main-col) / var(--font-size) * 1rem);
+}
+
+@media screen and (min-width: 660px) {
+	.🍪__wrapper {
+		margin-inline: auto;
+	}
+}
+
+
+.🍪__title,
+.🍪__subtitle {
+	font-weight: 400;
+}
+
+
+.🍪__note {
+	display: flex;
+	gap: 1em;
+	padding: 1em;
+	border: 1px solid var(--theme-border);
+}
+
+.🍪__note::before {
+	content: '🤓'
+}
+
+.🍪__link {
+	color: var(--theme-link);
+}
+
+.🍪__link--active {}
+
+.🍪__items {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+}
+
+.🍪__button {
+	padding: .25em 1em;
+	background-color: var(--theme-button-bg);
+	border: 0;
+	border-radius: var(--radius);
+	transition: background-color ease .5s;
+	color: var(--theme-button-text);
+}
+
+.🍪__button:hover {
+	background-color: var(--theme-button-bg-hover);
+	color: var(--theme-button-text-hover);
+}
