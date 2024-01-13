@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Tu cuenta | Ñam!</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+	<link rel="stylesheet" href="../assets/css/app.css">
+	<script src="../assets/js/app.js" type="module"></script>
+</head>
+<body class="🍪 js__🍪">
+<header class="🍪__header">
+	<div class="🍪__wrapper">
+		<div class="🍪__brand">
+			<a href="../">🍪</a>
+		</div>
+		<aside class="🍪__login">
+			<div class="🍪__login-form js__🍪-login-form">
+				<button class="🍪__login-form-trigger js__🍪-login-form-trigger">Login</button>
+				<form class="form js__form">
+					<div class="form__row">
+						<label for="user" class="form__label">Usuario</label>
+						<input id="user" type="text" class="form__field js__form-user">
+					</div>
+					<div class="form__row">
+						<label for="pass" class="form__label">Clave</label>
+						<input id="pass" type="password" class="form__field js__form-pass">
+					</div>
+					<div class="form__row form__row--actions">
+						<button class="form__submit js__form-submit">Dale!</button>
+					</div>
+				</form>
+			</div>
+			<div class="🍪__logged js__🍪-logged">
+				<ul class="🍪__logged-items">
+					<li class="🍪__logged-item">
+						<span class="🍪__link 🍪__link--active">Tu cuenta</span>
+					</li>
+					<li class="🍪__logged-item">
+						<button class="🍪__logout-btn js__🍪-logout-btn">Salir</button>
+					</li>
+				</ul>
+			</div>
+		</aside>
+	</div>
+</header>
+<main class="🍪__main">
+	<div class="🍪__wrapper">
+		<h1 class="🍪__title">Bienvenido<span class="js__🍪-user"></span>!
+		</h1>
+		<p class="🍪__intro">Aquí puedes personalizar tu rollo.</p>
+
+		<h2 class="🍪__subtitle">Temas</h2>
+
+		<form action="" class="form-theme js__form-theme">
+			<ul class="form-theme__list">
+				<li class="form-theme__list-item">
+					<div class="form-theme__row">
+						<input class="form-theme__radio js__form-theme-radio" data-theme="default" type="radio" name="theme" id="theme_default" checked>
+						<label class="form-theme__label" for="theme_default">Tema por defecto</label>
+					</div>
+				</li>
+				<li class="form-theme__list-item">
+					<div class="form-theme__row">
+						<input class="form-theme__radio js__form-theme-radio" data-theme="dark" type="radio" name="theme" id="theme_dark">
+						<label class="form-theme__label" for="theme_dark">Tema oscuro</label>
+					</div>
+				</li>
+				<li class="form-theme__list-item">
+					<div class="form-theme__row">
+						<input class="form-theme__radio js__form-theme-radio" data-theme="unicorn" type="radio" name="theme" id="theme_unicorn">
+						<label class="form-theme__label" for="theme_unicorn">Tema unicornio</label>
+					</div>
+				</li>
+				<li class="form-theme__list-item">
+					<div class="form-theme__row">
+						<input class="form-theme__radio js__form-theme-radio" data-theme="poop" type="radio" name="theme" id="theme_poop">
+						<label class="form-theme__label" for="theme_poop">Tema caca</label>
+					</div>
+				</li>
+			</ul>
+		</form>
+	</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* roboto-slab-300 - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'roboto slab';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/roboto/roboto-slab-v34-latin-300.woff2') format('woff2');
+}
+
+/* roboto-slab-regular - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'roboto slab';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/roboto/roboto-slab-v34-latin-regular.woff2') format('woff2');
+}
+
+/* roboto-slab-600 - latin */
+@font-face {
+	font-display: swap;
+	font-family: 'roboto slab';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../fonts/roboto/roboto-slab-v34-latin-600.woff2') format('woff2');
+}
+
+
+:root {
+	--color-white: #fff;
+	--color-designer-white: #f4f6f7;
+	--color-designer-black: #323232;
+	--color-designer-ultra-black: #121212;
+	--color-correct-blue: #007aff;
+	--color-correct-yellow: #ffcc00;
+	--color-safety-orange: #ff9900;
+	--color-border: #c4c4c4;
+	--color-border-dark: #666;
+	--color-cookie: #c0803a;
+	--color-chocolat: #1e0f07;
+	--font-size: 16;
+	--font-family: roboto slab, arial, sans-serif;
+	--margin-h: 30;
+	--width-main-col: 600;
+	--width-field: 200;
+	--radius: 10px;
+
+	--theme-bg: var(--color-designer-white);
+	--theme-bg-header: var(--color-white);
+	--theme-text: var(--color-designer-black);
+	--theme-link: var(--color-correct-blue);
+	--theme-border: var(--color-border);
+	--theme-button-text: var(--color-white);
+	--theme-button-text-hover: var(--color-white);
+	--theme-button-bg: var(--color-cookie);
+	--theme-button-bg-hover: var(--color-chocolat);
+	--theme-modal-shadow: 0 4px 200px rgba(0,0,0, .2), 0 4px 10px rgba(0,0,0, .2);
+	--theme-field-text: var(--color-designer-black);
+	--theme-field-bg: var(--color-white);
+	--theme-radio-bg: #a4a4a4;
+	--theme-radio-bg-active: var(--color-correct-blue);
+	--theme-radio-bg-handle: var(--color-white);
+}
+
+
+
+
+
+/*RESET*/
+html {
+	font-size: calc(var(--font-size) * 1px);
+}
+
+@media (min-width: 500px) {
+	:root {
+		--font-size: 20;
+	}
+}
+
+body {
+	margin: 0;
+}
+
+input,
+button {
+	font: inherit;
+}
+
+p {
+	margin: 0;
+}
+
+p + p {
+	margin-block-start: 1em;
+}
+
+a {
+	color: var(--color-correct-blue);
+}
