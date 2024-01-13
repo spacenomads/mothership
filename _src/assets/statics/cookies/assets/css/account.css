@@ -1,0 +1,56 @@
+.form-theme__row {
+	position: relative;
+}
+
+.form-theme__radio {
+	position: absolute;
+	left: 0;
+	inset-block-start: 50%;
+	inset-inline-start: calc(7 / var(--font-size) * 1rem);
+	transform: translateY(-50%);
+	margin: 0;
+	z-index: 1;
+	block-size: 1rem;
+	inline-size: 1rem;
+}
+
+.form-theme__label {
+	padding-inline-start: calc(70 / var(--font-size) * 1rem);
+	z-index: 2;
+}
+
+.form-theme__label::before {
+	content: '';
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-start: 0;
+	transform: translateY(-50%);
+	background-color: var(--theme-radio-bg);
+	inline-size: calc(60 / var(--font-size) * 1rem);
+	block-size: calc(30 / var(--font-size) * 1rem);
+	border-radius: calc(15 / var(--font-size) * 1rem);
+	transition: background-color ease .2s;
+	z-index: 2;
+}
+
+.form-theme__label::after {
+	content: '';
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-start: calc(3 / var(--font-size) * 1rem);
+	transform: translateY(-50%);
+	block-size: calc(24 / var(--font-size) * 1rem);
+	inline-size: calc(24 / var(--font-size) * 1rem);
+	background-color: var(--theme-radio-bg-handle);
+	border-radius: 50%;
+	transition: inset-inline-start ease .5s;
+	z-index: 3;
+}
+
+.form-theme__radio:checked + .form-theme__label::before {
+	background-color: var(--theme-radio-bg-active);
+}
+
+.form-theme__radio:checked + .form-theme__label::after {
+	inset-inline-start: calc(32 / var(--font-size) * 1rem);
+}

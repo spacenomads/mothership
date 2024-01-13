@@ -1,0 +1,124 @@
+.🍪__header {
+	background-color: var(--theme-bg-header);
+	border-block-end: 1px solid var(--theme-border);
+	padding-block: 1em;
+}
+
+.🍪__header .🍪__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.🍪__brand {}
+
+.🍪__brand a {
+	text-decoration: none;
+	font-size: 3em;
+	line-height: 1;
+}
+
+.🍪__login {
+}
+
+.🍪__login-form {
+}
+
+.🍪__login-form--hidden {
+	display: none;
+}
+
+.🍪__login-form-trigger {
+	border: 0;
+	background: none;
+	padding: 0;
+	color: var(--theme-link);
+}
+
+.form {
+	display: none;
+	position: fixed;
+	background-color: var(--theme-bg-header);
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
+	transform: translate(-50%, -50%);
+	padding: 2em;
+	box-shadow: var(--theme-modal-shadow);
+}
+
+.form--visible {
+	display: block;
+}
+
+.form__row {
+	display: flex;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+.form__row + .form__row {
+	margin-block-start: 1em;
+}
+
+.form__label {
+}
+
+.form__field {
+	inline-size: calc(var(--width-field) / var(--font-size) * 1rem);
+	box-sizing: border-box;
+	padding-inline: .5em;
+	border: 1px solid var(--theme-border);
+	color: var(--theme-field-text);
+	background-color: var(--theme-field-bg);
+}
+
+.form__row--actions {
+	justify-content: flex-end;
+}
+
+.form__submit {
+	inline-size: calc(var(--width-field) / var(--font-size) * 1rem);
+	box-sizing: border-box;
+}
+
+.🍪__logged {
+	display: none;
+}
+
+.🍪__logged--visible {
+	display: flex;
+	gap: 1em;
+	align-items: center;
+}
+
+.🍪__logged--visible::after {
+	content: '';
+	block-size: 32px;
+	inline-size: 32px;
+	border-radius: 50%;
+	background: url(../img/the_bohemian.png) center no-repeat;
+	background-size: cover;
+}
+
+.🍪__logged-items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: .8em;
+	color: var(--theme-link);
+}
+
+.🍪__logged-item + .🍪__logged-item::before {
+	content: '|';
+	margin-inline-end: .5em;
+}
+
+.🍪__logout-btn {
+	border: 0;
+	padding: 0;
+	background: none;
+	color: var(--theme-link);
+	text-decoration: underline;
+	cursor: pointer;
+}
