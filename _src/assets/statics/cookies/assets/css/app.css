@@ -2,6 +2,7 @@
 @import 'header.css';
 @import 'themes.css';
 @import 'account.css';
+@import 'footer.css';
 
 
 
@@ -15,6 +16,9 @@
 	font-weight: 300;
 	line-height: 1.75;
 	letter-spacing: .01em;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 
@@ -27,6 +31,10 @@
 	.🍪__wrapper {
 		margin-inline: auto;
 	}
+}
+
+.🍪__main {
+	flex-grow: 1;
 }
 
 
@@ -73,4 +81,12 @@
 .🍪__button:hover {
 	background-color: var(--theme-button-bg-hover);
 	color: var(--theme-button-text-hover);
+}
+
+.accessible-hide {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	margin: 0 !important;
+	overflow: hidden;
+	position: absolute;
 }

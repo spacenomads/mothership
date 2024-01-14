@@ -1,0 +1,42 @@
+.🍪__footer {
+	margin-block-start: 3em;
+}
+
+.🍪__footer .🍪__wrapper {
+	background-color: var(--theme-footer-bg);
+	color: var(--theme-footer-color);
+	border-radius: var(--radius) var(--radius) 0 0;
+	position: relative;
+	font-size: .85em;
+}
+
+.🍪__copy {
+	padding: 1em;
+	text-align: center;
+}
+
+.🍪__copy a {
+	color: inherit;
+	text-decoration-color: var(--theme-footer-link);
+}
+
+.🍪__license::before,
+.🍪__license::after {
+	content: '(';
+	color: var(--theme-footer-link);
+}
+
+.🍪__license::after {
+	content: ')';
+}
+
+.🍪__code {
+	color: var(--theme-text);
+	position: absolute;
+	inset-inline-end: .5em;
+	inset-block-end: 100%;
+}
+
+.🍪__code a {
+	color: var(--theme-link);
+}

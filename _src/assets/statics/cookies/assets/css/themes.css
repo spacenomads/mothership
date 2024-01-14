@@ -36,15 +36,18 @@
 	--theme-radio-bg: skyblue;
 	--theme-radio-bg-active: deeppink;
 	--theme-radio-bg-handle: var(--color-white);
+	--theme-footer-bg: var(--color-correct-blue);
+	--theme-footer-color: var(--color-white);
+	--theme-footer-link: black;
 
-	overflow: hidden;
-	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 
 
 .🍪__theme--unicorn .🍪__header,
-.🍪__theme--unicorn .🍪__main {
+.🍪__theme--unicorn .🍪__main,
+.🍪__theme--unicorn .🍪__footer {
 	position: relative;
 	z-index: 2;
 }
@@ -90,6 +93,13 @@
 	color: purple;
 }
 
+.🍪__theme--unicorn .🍪__code {
+	background-color: purple;
+	color: pink;
+	border-radius: var(--radius) var(--radius) 0 0;
+	padding-inline: .75em;
+}
+
 
 
 
@@ -98,13 +108,16 @@
 	--theme-radio-bg: var(--color-cookie);
 	--theme-radio-bg-active: var(--color-chocolat);
 	--theme-radio-bg-handle: var(--color-white);
+	--theme-footer-bg: var(--color-chocolat);
+	--theme-footer-color: var(--color-designer-white);
+	--theme-footer-link: var(--color-cookie);
 
-	overflow: hidden;
-	min-height: 100vh;
+	overflow-x: hidden;
 }
 
 .🍪__theme--poop .🍪__header,
-.🍪__theme--poop .🍪__main {
+.🍪__theme--poop .🍪__main,
+.🍪__theme--poop .🍪__footer {
 	position: relative;
 	z-index: 2;
 }
