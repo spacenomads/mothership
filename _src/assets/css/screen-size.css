@@ -29,7 +29,8 @@
 // 2. Utils
 // ---
 */
-.sr-only {
+.sr-only,
+.accessible-hide {
   border: 0;
   clip: rect(0, 0, 0, 0);
   -webkit-clip-path: inset(50%);
