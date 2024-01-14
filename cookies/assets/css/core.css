@@ -60,6 +60,9 @@
 	--theme-radio-bg: #a4a4a4;
 	--theme-radio-bg-active: var(--color-correct-blue);
 	--theme-radio-bg-handle: var(--color-white);
+	--theme-footer-bg: var(--color-designer-black);
+	--theme-footer-color: var(--color-designer-white);
+	--theme-footer-link: var(--color-correct-yellow);
 }
 
 
