@@ -14,6 +14,11 @@
 	--theme-radio-bg: #c4c4c4;
 	--theme-radio-bg-active: var(--color-correct-yellow);
 	--theme-radio-bg-handle: var(--color-designer-ultra-black);
+
+	--theme-info-bg: var(--color-designer-black);
+	--theme-info-th-bg: var(--color-designer-ultra-black);
+	--theme-info-th-color: var(--color-designer-white);
+	--theme-info-td-color: var(--color-correct-yellow);
 }
 
 
@@ -39,6 +44,11 @@
 	--theme-footer-bg: var(--color-correct-blue);
 	--theme-footer-color: var(--color-white);
 	--theme-footer-link: black;
+
+	--theme-info-bg: var(--color-white);
+	--theme-info-th-bg: deeppink;
+	--theme-info-th-color: var(--color-white);
+	--theme-info-td-color: var(--color-correct-blue);
 
 	overflow-x: hidden;
 }
@@ -111,6 +121,11 @@
 	--theme-footer-bg: var(--color-chocolat);
 	--theme-footer-color: var(--color-designer-white);
 	--theme-footer-link: var(--color-cookie);
+
+	--theme-info-bg: var(--color-white);
+	--theme-info-th-bg: var(--color-cookie);
+	--theme-info-th-color: var(--color-white);
+	--theme-info-td-color: var(--color-cookie);
 
 	overflow-x: hidden;
 }
