@@ -2,6 +2,11 @@
 	position: relative;
 }
 
+.form-theme__list {
+	padding: 0;
+	list-style: none;
+}
+
 .form-theme__radio {
 	position: absolute;
 	left: 0;
@@ -53,4 +58,25 @@
 
 .form-theme__radio:checked + .form-theme__label::after {
 	inset-inline-start: calc(32 / var(--font-size) * 1rem);
+}
+
+.🍪__info-table {
+	border-radius: 8px;
+	background: var(--theme-info-bg);
+	border-collapse:separate;
+	border-spacing: .3em;
+}
+
+.🍪__info-table-header {
+	padding: .25em 1em;
+	background: var(--theme-info-th-bg);
+	color: var(--theme-info-th-color);
+	border-radius: 5px;
+	text-align: end;
+}
+
+.🍪__info-table-value {
+	color: var(--theme-info-td-color);
+	padding: .25em 1em;
+	padding-inline-start: .75em;
 }
