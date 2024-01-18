@@ -63,6 +63,10 @@
 	--theme-footer-bg: var(--color-designer-black);
 	--theme-footer-color: var(--color-designer-white);
 	--theme-footer-link: var(--color-correct-yellow);
+	--theme-info-bg: white;
+	--theme-info-th-bg: #f5f6f7;
+	--theme-info-th-color: inherit;
+	--theme-info-td-color: inherit;
 }
 
 
