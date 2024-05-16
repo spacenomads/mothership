@@ -4,7 +4,7 @@
 
 /* TEAM */
 Frontend: Carlos Mañas
-Mastodon: https://mastodon.social/@oneeneydman
+Mastodon: https://laterracita.online/@oneeneydman
 Contact: carlos@spacenomads.com
 
 
@@ -16,8 +16,7 @@ linkedin: linkedin.com/in/saranshsinha
 
 
 /* SITE */
-Coded: 2-5-2020
-Language: Spanish
-Doctype: HTML5
-Components: Nunjucks, SASS, HTML, Javascript
-Tools: VS Code, Slack, Sketch
+Last update: 2024/5/16.
+Standards: HTML5, CSS3, JS.
+Components: SCSS, 11ty, Node, Gulp.
+Software: VS Code, WebStorm, Penpot, Mindnode.
