@@ -6,7 +6,8 @@
 }
 
 .social__link {
-	background: img('sprite-social-header.svg', $chuck) left top no-repeat rgba($color-chuck, .05);
+	background: img('sprite-social-header-2.svg', $chuck) left top no-repeat rgba($color-chuck, .05);
+	background-size: auto rem(40);
 	border-radius: rem(3);
 	display: block;
 	height: rem(1);
@@ -32,6 +33,7 @@
 	background-position: rem(40 * -2) top;
 }
 
-.social__link--youtube {
+.social__link--youtube,
+.social__link--vedeeo {
 	background-position: rem(40 * -3) top;
 }

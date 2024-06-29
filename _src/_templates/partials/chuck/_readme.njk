@@ -12,54 +12,21 @@
 
 		<div class="chuck__readme-block">
 			<h2 class="chuck__readme-subtitle">Sesiones</h2>
-			<p>Durante unos días los vídeos seguirán en el <a href="https://twitch.tv/chuck_as_usual">canal de Twitch</a> pero luego los dejaré subidos en <a href="https://www.youtube.com/c/chuck-as-usual">mi canal de Youtube</a>, recogidos además en <a href="https://www.youtube.com/playlist?list=PLO-mtrYE0827SRqJnPOOU1OQLbN_OZpT6">esta playlist</a>.</p>
+			<p>Durante unos días los vídeos seguirán en el <a href="https://twitch.tv/chuck_as_usual">canal de Twitch</a> pero luego los dejaré subidos en <a href="{{ seasons.channel.link }}">mi canal de {{ seasons.channel.platform.name }}</a>, recogidos además en <a href="{{ seasons.channel.playlists }}">estas playlists</a>.</p>
 
-			<p>Y todo el código estará en abierto en un <a href="https://github.com/oneeyedman/maquetando-con-chuck">repo de Github</a></p>
+			<p>Y todo el código estará en abierto en un <a href="https://github.com/oneeyedman/maquetando-con-chuck">repo de Github</a> (pronto lo moveré a Codeberg).</p>
 
-			<h3 class="chuck__readme-subtitle">Temporada 3</h3>
+			<p>De postre, en la temporada 3 hay una pequeña subserie de <a href="{{ seasons.s3emailResponsive.playList.link }}">maquetación de email responsive</a>.</p>
 
-			<ol class="chuck__readme-videos">
-				{% for video in seasons.s3 %}
-					<li class="chuck__readme-video">
-						<div class="video">
-							<strong class="video__name">{{video.name}}</strong> |
-							{% for item in video.videos %}
-								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
-							{% endfor %}
-						</div>
-					</li>
-				{% endfor %}
-			</ol>
+			{% set currentPlaylist = 's3'%}
+			{% include "partials/chuck/_playlist.njk" %}
 
-			<h3 class="chuck__readme-subtitle">Temporada 2</h3>
+			{% set currentPlaylist = 's2'%}
+			{% include "partials/chuck/_playlist.njk" %}
 
-			<ol class="chuck__readme-videos">
-				{% for video in seasons.s2 %}
-					<li class="chuck__readme-video">
-						<div class="video">
-							<strong class="video__name">{{video.name}}</strong> |
-							{% for item in video.videos %}
-								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
-							{% endfor %}
-						</div>
-					</li>
-				{% endfor %}
-			</ol>
+			{% set currentPlaylist = 's1'%}
+			{% include "partials/chuck/_playlist.njk" %}
 
-			<h3 class="chuck__readme-subtitle">Temporada 1</h3>
-
-			<ol class="chuck__readme-videos">
-				{% for video in seasons.s1 %}
-					<li class="chuck__readme-video">
-						<div class="video">
-							<strong class="video__name">{{video.name}}</strong> |
-							{% for item in video.videos %}
-								<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}} <time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time></a>{{'' if loop.last else ', '}}
-							{% endfor %}
-						</div>
-					</li>
-				{% endfor %}
-			</ol>
 		</div>
 
 		<div class="chuck__readme-block">
