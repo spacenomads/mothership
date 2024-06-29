@@ -1,0 +1,16 @@
+<h3 class="chuck__readme-subtitle">{{ seasons[currentPlaylist].playList.name }}</h3>
+
+<ol class="chuck__readme-videos">
+	{% for video in seasons[currentPlaylist].items %}
+		<li class="chuck__readme-video">
+			<div class="video">
+				<strong class="video__name">{{video.name}}</strong> |
+							{% for item in video.videos %}
+					<a href="{{item.link}}" class="video__link">Video{{' ' + loop.index if video.videos.length > 1 else ''}}
+						<time class="video__duration" datetime="{{item.time}}">{{item.duration}}</time>
+					</a>{{'' if loop.last else ', '}}
+				{% endfor %}
+			</div>
+		</li>
+	{% endfor %}
+</ol>
