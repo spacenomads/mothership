@@ -12,8 +12,8 @@ function getStaticsVersion() {
 module.exports = {
 	lang: 'es',
 	mode: process.env.MODE,
-  year: getCurrentYear(),
+	year: getCurrentYear(),
 	version: getStaticsVersion(),
-	site_name: "Space Nomads",
-  site_subtitle: "Pandemic edition",
+	site_name: 'Space Nomads',
+	site_subtitle: 'Pandemic edition',
 };

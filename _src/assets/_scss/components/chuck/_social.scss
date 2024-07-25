@@ -6,7 +6,7 @@
 }
 
 .social__link {
-	background: img('sprite-social-header-2.svg', $chuck) left top no-repeat rgba($color-chuck, .05);
+	background: img('sprite-social-header.svg', $chuck) left top no-repeat rgba($color-chuck, .05);
 	background-size: auto rem(40);
 	border-radius: rem(3);
 	display: block;
@@ -25,6 +25,7 @@
 	background-position: rem(40 * 0) top;
 }
 
+.social__link--codeberg,
 .social__link--github {
 	background-position: rem(40 * -1) top;
 }
