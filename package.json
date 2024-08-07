@@ -45,7 +45,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:spacenomads/mothership.git"
+    "url": "git@github.com:spacenomads/mothership.git"
   },
   "author": "Space Nomads",
   "license": "CC0-1.0",
