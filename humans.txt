@@ -1,15 +1,19 @@
-﻿/* the humans responsible & colophon */
+/* the humans responsible & colophon */
 /* humanstxt.org */
 
 
 /* TEAM */
 Frontend: Carlos Mañas
-Mastodon: https://laterracita.online/@oneeneydman
+Mastodon: https://laterracita.online/@oneeyedman.
 Contact: carlos@spacenomads.com
+
+Feline Overseer: Bonaparte
+Mastodon: https://laterracita.online/@bonapartethecat
 
 
 /* THANKS */
 
+Trece ❤
 The pure CSS parallax star background has been made by @saran5h
 Demo: http://codepen.io/saransh/details/BKJun
 linkedin: linkedin.com/in/saranshsinha
