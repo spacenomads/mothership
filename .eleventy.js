@@ -11,8 +11,7 @@ const {MODE: mode} = process.env;
 
 module.exports = function (config) {
   config.addPassthroughCopy({'_src/assets/rootfiles/cname.txt': '/CNAME'});
-  config.addPassthroughCopy({'_src/assets/rootfiles/humans.txt': '/humans.txt'});
-  config.addPassthroughCopy({'_src/assets/rootfiles/keybase.txt': '/keybase.txt'});
+  // config.addPassthroughCopy({'_src/assets/rootfiles/keybase.txt': '/keybase.txt'});
   config.addPassthroughCopy({'_src/assets/statics': '/'});
   config.addPassthroughCopy({'_src/assets/icons/favicon.ico': '/favicon.ico'});
   config.addPassthroughCopy('_src/assets/img/');
