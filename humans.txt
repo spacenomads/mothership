@@ -20,7 +20,7 @@ linkedin: linkedin.com/in/saranshsinha
 
 
 /* SITE */
-Last update: 2025/1/8.
+Last update: 2025/1/20.
 Standards: HTML5, CSS3, JS.
 Components: SCSS, 11ty, Node, Gulp.
 Software: VS Code, WebStorm, Penpot, Mindnode.
